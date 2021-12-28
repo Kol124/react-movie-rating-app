@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "name": "the hunt",
+    "ratings": 9.2,
+    "duration": "1:58"
+  },
+  {
+    "id": 1,
+    "name": "gone girl",
+    "ratings": 9.7,
+    "duration": "2:29"
+  },
+  {
+    "id": 2,
+    "name": "once upon a time in hollywood",
+    "ratings": 9.5,
+    "duration": "2:41"
+  },
+  {
+    "id": 3,
+    "name": "dune",
+    "ratings": 8.7,
+    "duration": "2:35"
+  },
+  {
+    "id": 4,
+    "name": "john wick",
+    "ratings": 9.3,
+    "duration": "1:41"
+  }
+]

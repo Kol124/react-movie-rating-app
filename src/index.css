@@ -1,0 +1,22 @@
+@import url(fonts.css);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Josefin Sans, sans-serif;
+}
+
+p {
+  color: #333;
+}
