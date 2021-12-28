@@ -6,5 +6,5 @@
  
 ### Features
 
-- **Redux** for State Management.
+- **Redux and Redux Toolkit** for State Management.
 - **Styled Components** for CSS in JS styling.
