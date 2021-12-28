@@ -1,28 +1,71 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addMovieRating,
+  editMovieRating,
+  setSearchQuery,
+  selectMovies,
+  selectSearchQuery,
+} from "../features/movies/moviesSlice";
 
 export const RateMovie = () => {
-  const [movie, setMovie] = useState("");
-  const [rating, setRating] = useState();
+  const dispatch = useDispatch();
+  const movies = useSelector(selectMovies);
+  const searchItem = useSelector(selectSearchQuery);
+
+  const [name, setName] = useState("");
+  const [rating, setRating] = useState(0);
   const [duration, setDuration] = useState("");
 
-  const handleSubmit = () => {
-    console.log("Submit");
+  const myMovies = movies.find(
+    (myMovie) => myMovie.name === name.toLowerCase()
+  );
+
+  const handleSubmit = (e) => {
+    const title = name.toLowerCase();
+    e.preventDefault();
+    if (myMovies) {
+      dispatch(editMovieRating({ id: myMovies.id, ratings: rating }));
+    } else {
+      dispatch(
+        addMovieRating({
+          name: title,
+          ratings: rating,
+          duration: duration,
+        })
+      );
+    }
+
+    if (searchItem.toLowerCase() !== title) {
+      dispatch(setSearchQuery(""));
+    }
+
+    setName("");
+    setRating(0);
+    setDuration("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <p>Movie</p>
-      <Input value={movie} type="text" onChange={(e) => setMovie} />
+      <Input
+        value={name}
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
       <p>Rating</p>
       <Input
         value={rating}
         type="number"
-        placeholder="0"
-        onChange={(e) => setRating}
+        onChange={(e) => setRating(e.target.value)}
       />
       <p>Duration</p>
-      <Input value={duration} type="text" onChange={setDuration} />
+      <Input
+        value={duration}
+        type="text"
+        onChange={(e) => setDuration(e.target.value)}
+      />
       <Button type="submit">Submit</Button>
     </form>
   );

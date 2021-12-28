@@ -20,3 +20,28 @@ body {
 p {
   color: #333;
 }
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+  padding: 1.2rem 0.5rem;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 3rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container h1 {
+    font-size: 1.7rem;
+  }
+}
