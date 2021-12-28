@@ -2,7 +2,7 @@
 
 <!-- <a href="https://react-app.netlify.app" target="_blank"><h2>Demo</a> -->
 
-<img src="public/screen.png" alt="Screen Shot" />
+<img src="public/screen.png" alt="screen shot" />
  
 ### Features
 

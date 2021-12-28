@@ -14,6 +14,7 @@ export const ListItem = ({ movie }) => {
 const ListItems = styled.section`
   display: grid;
   padding: 15px 5px;
+  align-items: center;
   grid-template-columns: 1fr 0.5fr 0.5fr;
 
   &:not(:last-of-type) {
