@@ -18,9 +18,8 @@ export const RateMovie = () => {
   const [rating, setRating] = useState(0);
   const [duration, setDuration] = useState("");
 
-  const myMovies = movies.find(
-    (myMovie) => myMovie.name === name.toLowerCase()
-  );
+  const myMovies =
+    movies && movies.find((myMovie) => myMovie.name === name.toLowerCase());
 
   const handleSubmit = (e) => {
     const title = name.toLowerCase();

@@ -23,9 +23,13 @@ const MovieList = () => {
     dispatch(getMovies());
   }, [dispatch]);
 
-  const moviesList = movies.filter((movie) => {
-    return movie.name.toLowerCase().indexOf(searchItem.toLowerCase()) !== -1;
-  });
+  console.log(movies);
+
+  const moviesList =
+    movies &&
+    movies.filter((movie) => {
+      return movie.name.toLowerCase().indexOf(searchItem.toLowerCase()) !== -1;
+    });
 
   return (
     <>
@@ -60,6 +64,7 @@ const Search = styled.input`
 
 const Title = styled.section`
   display: grid;
+  column-gap: 8px;
   padding: 15px 5px;
   border-top: 1px solid #eee;
   border-bottom: 2px solid #ddd;

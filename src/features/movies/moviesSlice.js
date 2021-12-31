@@ -33,7 +33,11 @@ export const moviesSlice = createSlice({
   },
   extraReducers: {
     [getMovies.fulfilled]: (state, action) => {
-      state.movies = action.payload;
+      if (state.movies === []) {
+        state.movies = action.payload;
+      } else {
+        return;
+      }
     },
     [getMovies.rejected]: () => {
       console.log("Fetch Error");
@@ -44,7 +48,7 @@ export const moviesSlice = createSlice({
 export const { addMovieRating, editMovieRating, setSearchQuery } =
   moviesSlice.actions;
 
-export const selectMovies = (state) => state.movies.movies;
-export const selectSearchQuery = (state) => state.movies.searchQuery;
+export const selectMovies = (state) => state.ratings.movies;
+export const selectSearchQuery = (state) => state.ratings.searchQuery;
 
 export default moviesSlice.reducer;
