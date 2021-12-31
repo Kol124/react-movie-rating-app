@@ -33,7 +33,7 @@ export const moviesSlice = createSlice({
   },
   extraReducers: {
     [getMovies.fulfilled]: (state, action) => {
-      if (state.movies === []) {
+      if (state.movies.length === 0) {
         state.movies = action.payload;
       } else {
         return;
